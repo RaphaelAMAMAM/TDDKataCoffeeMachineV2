@@ -28,14 +28,15 @@ public class Main {
     }
 
     public static double userInputDouble() {
-        try {
-            double doubleFromUser = scanner.nextDouble();
-            scanner.nextLine();
-            return doubleFromUser;
-        } catch (InputMismatchException e) {
-            scanner.nextLine();
-            System.out.println("ERROR : you did not put money, please retry :");
-            return userInputDouble();
+        while (true){
+            try {
+                double doubleFromUser = scanner.nextDouble();
+                scanner.nextLine();
+                return doubleFromUser;
+            } catch (InputMismatchException e) {
+                scanner.nextLine();
+                System.out.println("ERROR : you did not put money, please retry :");
+            }
         }
     }
 }
