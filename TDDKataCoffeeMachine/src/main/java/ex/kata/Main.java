@@ -33,7 +33,9 @@ public class Main {
             scanner.nextLine();
             return doubleFromUser;
         } catch (InputMismatchException e) {
-            return 0;
+            scanner.nextLine();
+            System.out.println("ERROR : you did not put money, please retry :");
+            return userInputDouble();
         }
     }
 }
